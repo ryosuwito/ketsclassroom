@@ -62,9 +62,9 @@ const SurveyList = () => {
       <CCol xl={12}>
         <CCard>
           <CCardHeader>
-            Survey
+            Soal
             <Link to="/survey/create">
-              <CButton className="float-right" color="primary">Survey Baru</CButton>
+              <CButton className="float-right" color="primary">Tambah Soal</CButton>
             </Link>
           </CCardHeader>
           <CCardBody>

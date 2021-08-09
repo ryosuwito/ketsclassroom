@@ -1,28 +1,20 @@
+from django.db.models.deletion import CASCADE
+from base.models import CustomeBaseModel
 from django.db import models
 from datetime import datetime, timedelta
 from django.utils import timezone
 from django.utils.crypto import get_random_string
 from django.template.defaultfilters import slugify
-from custom_form.models import CustomForm
+from assignment.models import Assignment
 
-def unique_slugify(instance, slug):
-    model = instance.__class__
-    unique_slug = slug
-    while model.objects.filter(slug=unique_slug).exists():
-        unique_slug = slug + get_random_string(length=4)
-    return unique_slug
+from responder.models import Responder
 
-class Response(models.Model):
-    slug = models.SlugField()
-    form = models.ForeignKey(CustomForm, on_delete=models.CASCADE, null=True)
+class Response(CustomeBaseModel):
+    assignment = models.ForeignKey(Assignment, on_delete=models.CASCADE, null=True, related_name="assignment_target")
     answer = models.JSONField(default=None, null=True)
+    responder = models.ForeignKey(Responder, on_delete=CASCADE, related_name="reponder_target")
 
-    is_private = models.BooleanField(default=False)
-    is_archived = models.BooleanField(default=False)
-
-    created_at =  models.DateTimeField(auto_now_add=True)
-    updated_at =  models.DateTimeField(auto_now=True)
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = unique_slugify(self, slugify(self.title))
+            self.slug = self.unique_slugify(slugify(get_random_string(length=20)))
         super().save(*args, **kwargs)

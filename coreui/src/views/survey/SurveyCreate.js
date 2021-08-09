@@ -349,11 +349,11 @@ const Survey = () => {
             <ErrorModal key={getRandomId}></ErrorModal>
             <CCard>
                 <CCardHeader>
-                    Buat Survey Baru
+                    Buat Soal Baru
                 </CCardHeader>
                 <CCardBody>
                 <CFormGroup>
-                    <CLabel>Judul Survey</CLabel>
+                    <CLabel>Judul Soal</CLabel>
                     <CInput
                     type="text"
                     id="title"

@@ -1,13 +1,23 @@
 const _nav =  [
   {
     _tag: 'CSidebarNavItem',
-    name: 'Semua Survey',
+    name: 'Tugas',
+    to: '/assignments',
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Soal',
     to: '/surveys',
   },
   {
     _tag: 'CSidebarNavItem',
-    name: 'New Survey',
-    to: '/survey/create',
+    name: 'Kelas',
+    to: '/responder-groups',
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Siswa',
+    to: '/responders',
   }
 ]
 

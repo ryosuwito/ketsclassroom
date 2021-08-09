@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'base',
     'custom_form',
     'api',
-    'response'
+    'assignment',
+    'response',
+    'responder',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +82,7 @@ WSGI_APPLICATION = 'internal_form.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'sv-db',
+        'NAME': 'ketsclassroom',
         'USER': 'sv-admin',
         'PASSWORD': 'sv-admin',
         'HOST': 'localhost',

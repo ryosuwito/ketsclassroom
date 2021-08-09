@@ -361,15 +361,15 @@ const SurveyEdit = ({match}) => {
             <CCard>
                 <CCardHeader>
                     <CAlert color="primary" style={{"textAlign":"center"}}>
-                        <h5>Link Survey <br></br>
+                        <h5>Link Soal <br></br>
                         <CLink href={baseUrl + "/response/"+surveyId} target="_blank">{baseUrl + "/response/"+surveyId}</CLink>
                         </h5>
                     </CAlert>
-                    <h4>Ubah Survey</h4>
+                    <h4>Ubah Soal</h4>
                 </CCardHeader>
                 <CCardBody>
                 <CFormGroup>
-                    <CLabel>Judul Survey</CLabel>
+                    <CLabel>Judul Soal</CLabel>
                     <CInput
                     type="text"
                     id="title"
